@@ -1,0 +1,32 @@
+location_scouting_task:
+  description: >
+    {sehir} şehri için kapsamlı bir araştırma yap. 
+    Kullanıcının özellikle şu ilgi alanlarına odaklan: {ilgi_alanlari}.
+    Sadece en popüler yerleri değil, yerel halkın sevdiği gizli noktaları da bul.
+    En az 10 farklı nokta (restoran, müze, park vb.) belirle.
+  expected_output: >
+    Her mekanın ismini, neden seçildiğini, konumunu ve kısa bir açıklamasını içeren detaylı bir liste.
+  agent: city_scout
+
+itinerary_planning_task:
+  description: >
+    City Scout tarafından bulunan mekanları kullanarak {gun_sayisi} günlük bir seyahat planı hazırla.
+    Mekanların birbirine coğrafi yakınlığına dikkat et (lojistik olarak mantıklı olmalı).
+    Her gün için sabah, öğle, akşam şeklinde saatli bir akış oluştur.
+    Yemek molalarını unutma.
+  expected_output: >
+    Gün gün, saat saat ayrılmış, lojistik açıdan optimize edilmiş tam seyahat rotası.
+  agent: travel_planner
+
+budget_calculation_task:
+  description: >
+    Oluşturulan seyahat planındaki her kalem için ortalama fiyatları araştır.
+    - Ortalama yemek fiyatları
+    - Müze/etkinlik giriş ücretleri
+    - Şehir içi ulaşım tahminleri
+    Tüm harcamaları topla ve {para_birimi} cinsinden bir rapor sun.
+  expected_output: >
+    Kalem kalem harcama dökümü ve toplam tahmini bütçeyi içeren finansal rapor.
+    Markdown formatında, başlıklar ve maddeler halinde düzenli olmalı.
+  agent: budget_estimator
+  output_file: 'tatil_plani.md' 
