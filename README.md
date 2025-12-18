@@ -1,54 +1,53 @@
-# FirstProject Crew
+# ✈️ AI Seyahat Planlayıcısı (AI Travel Planner)
 
-Welcome to the FirstProject Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+Bu proje, **CrewAI** çerçevesi kullanılarak geliştirilmiş, çoklu yapay zeka ajanlarının (Multi-Agent System) birlikte çalıştığı akıllı bir seyahat asistanıdır.
 
-## Installation
+Klasik seyahat bloglarının aksine; bu sistem gitmek istediğiniz şehri, gün sayısını ve ilgi alanlarınızı analiz eder, size özel **saatlik rota** ve **bütçe hesabı** çıkarır.
 
-Ensure you have Python >=3.10 <3.14 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
+## Nasıl Çalışır? (Ajan Mimarisi)
 
-First, if you haven't already, install uv:
+Proje arkada birbiriyle konuşan 3 farklı yapay zeka ajanı kullanır:
 
+1.  **🕵️ Yerel Kaşif (City Scout):** Şehrin en turistik yerlerini değil, yerlilerin sevdiği gizli noktaları ve ilgi alanınıza uygun mekanları araştırır.
+2.  **🗺️ Rota Planlayıcı (Travel Planner):** Kaşifin bulduğu mekanları harita üzerinde lojistik olarak en mantıklı sıraya dizer ve günlük akış oluşturur.
+3.  **💰 Bütçe Uzmanı (Budget Estimator):** Oluşturulan rotadaki yemek, müze girişleri ve ulaşım masraflarını hesaplayıp tahmini bir fatura çıkarır.
+
+## 🛠️ Kurulum
+
+Projeyi kendi bilgisayarınızda çalıştırmak için aşağıdaki adımları izleyin:
+
+**1. Projeyi Klonlayın:**
 ```bash
-pip install uv
+git clone [https://github.com/KULLANICI_ADIN/ai-travel-planner.git](https://github.com/KULLANICI_ADIN/ai-travel-planner.git)
+```
+```
+cd ai-travel-planner
 ```
 
-Next, navigate to your project directory and install the dependencies:
-
-(Optional) Lock the dependencies and install them by using the CLI command:
-```bash
-crewai install
+2. Gerekli Kütüphaneleri Yükleyin: Python (>=3.10) yüklü olduğundan emin olun.
 ```
-### Customizing
-
-**Add your `OPENAI_API_KEY` into the `.env` file**
-
-- Modify `src/first_project/config/agents.yaml` to define your agents
-- Modify `src/first_project/config/tasks.yaml` to define your tasks
-- Modify `src/first_project/crew.py` to add your own logic, tools and specific args
-- Modify `src/first_project/main.py` to add custom inputs for your agents and tasks
-
-## Running the Project
-
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
-
-```bash
-$ crewai run
+pip install crewai
+```
+3. API Anahtarını Ayarlayın: Ana dizinde .env isminde bir dosya oluşturun ve OpenAI API anahtarınızı ekleyin:
+```
+OPENAI_API_KEY=sk-proj-123456...
+```
+🚀 Çalıştırma
+Terminalden projeyi başlatmak için şu komutu kullanın:
+```
+crewai run
 ```
 
-This command initializes the first_project Crew, assembling the agents and assigning them tasks as defined in your configuration.
+## 📊 Örnek Çıktı Görseli
 
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
+Aşağıda, ajanların **Roma** için oluşturduğu 3 günlük seyahat planı ve maliyet raporunun ekran görüntüsü yer almaktadır:
+Aşağıda, ajanların **Roma** için oluşturduğu 3 günlük seyahat planı ve maliyet raporunun ekran görüntüleri yer almaktadır:
 
-## Understanding Your Crew
+<img src="https://github.com/user-attachments/assets/1d0fbf97-5bce-4eed-9b77-a39bc8435ad7" width="500" alt="Roma Seyahat Planı 1. Gün">
+<br>
+<img src="https://github.com/user-attachments/assets/aa0a285c-4559-415e-93e5-1417c2f6511b" width="500" alt="Roma Seyahat Planı 2. ve 3. Gün">
+<br>
+<img src="https://github.com/user-attachments/assets/d45dc8ba-21b8-4751-9887-5ac55ffb880f" width="500" alt="Roma Bütçe Tablosu">
 
-The first_project Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
 
-## Support
 
-For support, questions, or feedback regarding the FirstProject Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
-
-Let's create wonders together with the power and simplicity of crewAI.
