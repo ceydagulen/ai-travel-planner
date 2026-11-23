@@ -18,9 +18,7 @@ Projeyi kendi bilgisayarınızda çalıştırmak için aşağıdaki adımları i
 
 **1. Projeyi Klonlayın:**
 ```bash
-git clone [https://github.com/KULLANICI_ADIN/ai-travel-planner.git](https://github.com/KULLANICI_ADIN/ai-travel-planner.git)
-```
-```
+git clone https://github.com/ceydagulen/ai-travel-planner.git
 cd ai-travel-planner
 ```
 
